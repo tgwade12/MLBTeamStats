@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF4EFC732455E50300A9830E /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EFC722455E50300A9830E /* RosterViewController.swift */; };
+		EF4EFC752455F36000A9830E /* Rosters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EFC742455F36000A9830E /* Rosters.swift */; };
+		EF4EFC772455F3BA00A9830E /* RosterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EFC762455F3BA00A9830E /* RosterData.swift */; };
 		EFC36732245565A400CE204F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC36731245565A400CE204F /* AppDelegate.swift */; };
 		EFC36734245565A400CE204F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC36733245565A400CE204F /* SceneDelegate.swift */; };
-		EFC36736245565A400CE204F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC36735245565A400CE204F /* ViewController.swift */; };
+		EFC36736245565A400CE204F /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC36735245565A400CE204F /* TeamsViewController.swift */; };
 		EFC36739245565A400CE204F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC36737245565A400CE204F /* Main.storyboard */; };
 		EFC3673B245565A600CE204F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFC3673A245565A600CE204F /* Assets.xcassets */; };
 		EFC3673E245565A600CE204F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC3673C245565A600CE204F /* LaunchScreen.storyboard */; };
+		EFC367462455685F00CE204F /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC367452455685F00CE204F /* TeamData.swift */; };
+		EFC36748245568BE00CE204F /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC36747245568BE00CE204F /* URLConstants.swift */; };
+		EFC3674A24556B9800CE204F /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC3674924556B9800CE204F /* Teams.swift */; };
+		EFC3674C2455743000CE204F /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC3674B2455743000CE204F /* TeamDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF4EFC722455E50300A9830E /* RosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterViewController.swift; sourceTree = "<group>"; };
+		EF4EFC742455F36000A9830E /* Rosters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rosters.swift; sourceTree = "<group>"; };
+		EF4EFC762455F3BA00A9830E /* RosterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterData.swift; sourceTree = "<group>"; };
 		EFC3672E245565A400CE204F /* MLBTeamStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLBTeamStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC36731245565A400CE204F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFC36733245565A400CE204F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EFC36735245565A400CE204F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFC36735245565A400CE204F /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		EFC36738245565A400CE204F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFC3673A245565A600CE204F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFC3673D245565A600CE204F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFC3673F245565A600CE204F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFC367452455685F00CE204F /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
+		EFC36747245568BE00CE204F /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		EFC3674924556B9800CE204F /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		EFC3674B2455743000CE204F /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +72,14 @@
 			children = (
 				EFC36731245565A400CE204F /* AppDelegate.swift */,
 				EFC36733245565A400CE204F /* SceneDelegate.swift */,
-				EFC36735245565A400CE204F /* ViewController.swift */,
+				EFC36747245568BE00CE204F /* URLConstants.swift */,
+				EFC3674924556B9800CE204F /* Teams.swift */,
+				EF4EFC742455F36000A9830E /* Rosters.swift */,
+				EFC367452455685F00CE204F /* TeamData.swift */,
+				EF4EFC762455F3BA00A9830E /* RosterData.swift */,
+				EFC36735245565A400CE204F /* TeamsViewController.swift */,
+				EFC3674B2455743000CE204F /* TeamDetailViewController.swift */,
+				EF4EFC722455E50300A9830E /* RosterViewController.swift */,
 				EFC36737245565A400CE204F /* Main.storyboard */,
 				EFC3673A245565A600CE204F /* Assets.xcassets */,
 				EFC3673C245565A600CE204F /* LaunchScreen.storyboard */,
@@ -138,8 +159,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFC36736245565A400CE204F /* ViewController.swift in Sources */,
+				EF4EFC772455F3BA00A9830E /* RosterData.swift in Sources */,
+				EFC3674A24556B9800CE204F /* Teams.swift in Sources */,
+				EFC36736245565A400CE204F /* TeamsViewController.swift in Sources */,
+				EFC36748245568BE00CE204F /* URLConstants.swift in Sources */,
 				EFC36732245565A400CE204F /* AppDelegate.swift in Sources */,
+				EF4EFC732455E50300A9830E /* RosterViewController.swift in Sources */,
+				EFC3674C2455743000CE204F /* TeamDetailViewController.swift in Sources */,
+				EFC367462455685F00CE204F /* TeamData.swift in Sources */,
+				EF4EFC752455F36000A9830E /* Rosters.swift in Sources */,
 				EFC36734245565A400CE204F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
