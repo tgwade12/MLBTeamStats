@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5548361FA70D6702B5B0F10 /* Pods_MLBTeamStats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A91B757E6793F436386BD /* Pods_MLBTeamStats.framework */; };
+		EF26EC2B2456ABED005A4745 /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF26EC2A2456ABED005A4745 /* PlayerStatsViewController.swift */; };
+		EF27CBCF24562B4F0094A53F /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF27CBCE24562B4F0094A53F /* StatisticsViewController.swift */; };
+		EF39153B2456BF91008A810A /* ScoutingReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39153A2456BF91008A810A /* ScoutingReportViewController.swift */; };
+		EF39153D2456D17C008A810A /* ScoutingReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF39153C2456D17C008A810A /* ScoutingReportDetailViewController.swift */; };
 		EF4EFC732455E50300A9830E /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EFC722455E50300A9830E /* RosterViewController.swift */; };
 		EF4EFC752455F36000A9830E /* Rosters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EFC742455F36000A9830E /* Rosters.swift */; };
 		EF4EFC772455F3BA00A9830E /* RosterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EFC762455F3BA00A9830E /* RosterData.swift */; };
@@ -23,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031CA72D310F1FF8095F8B24 /* Pods-MLBTeamStats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLBTeamStats.release.xcconfig"; path = "Target Support Files/Pods-MLBTeamStats/Pods-MLBTeamStats.release.xcconfig"; sourceTree = "<group>"; };
+		7BA4F2D646529E9CE2E0738A /* Pods-MLBTeamStats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLBTeamStats.debug.xcconfig"; path = "Target Support Files/Pods-MLBTeamStats/Pods-MLBTeamStats.debug.xcconfig"; sourceTree = "<group>"; };
+		CE4A91B757E6793F436386BD /* Pods_MLBTeamStats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLBTeamStats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF26EC2A2456ABED005A4745 /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
+		EF27CBCE24562B4F0094A53F /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		EF39153A2456BF91008A810A /* ScoutingReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoutingReportViewController.swift; sourceTree = "<group>"; };
+		EF39153C2456D17C008A810A /* ScoutingReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoutingReportDetailViewController.swift; sourceTree = "<group>"; };
 		EF4EFC722455E50300A9830E /* RosterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterViewController.swift; sourceTree = "<group>"; };
 		EF4EFC742455F36000A9830E /* Rosters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rosters.swift; sourceTree = "<group>"; };
 		EF4EFC762455F3BA00A9830E /* RosterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterData.swift; sourceTree = "<group>"; };
@@ -45,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5548361FA70D6702B5B0F10 /* Pods_MLBTeamStats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		540817E760A7392F7FFBF281 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A91B757E6793F436386BD /* Pods_MLBTeamStats.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6828296C3E5430341A6EFF74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BA4F2D646529E9CE2E0738A /* Pods-MLBTeamStats.debug.xcconfig */,
+				031CA72D310F1FF8095F8B24 /* Pods-MLBTeamStats.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EFC36725245565A400CE204F = {
 			isa = PBXGroup;
 			children = (
 				EFC36730245565A400CE204F /* MLBTeamStats */,
 				EFC3672F245565A400CE204F /* Products */,
+				6828296C3E5430341A6EFF74 /* Pods */,
+				540817E760A7392F7FFBF281 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +112,10 @@
 				EFC36735245565A400CE204F /* TeamsViewController.swift */,
 				EFC3674B2455743000CE204F /* TeamDetailViewController.swift */,
 				EF4EFC722455E50300A9830E /* RosterViewController.swift */,
+				EF27CBCE24562B4F0094A53F /* StatisticsViewController.swift */,
+				EF26EC2A2456ABED005A4745 /* PlayerStatsViewController.swift */,
+				EF39153A2456BF91008A810A /* ScoutingReportViewController.swift */,
+				EF39153C2456D17C008A810A /* ScoutingReportDetailViewController.swift */,
 				EFC36737245565A400CE204F /* Main.storyboard */,
 				EFC3673A245565A600CE204F /* Assets.xcassets */,
 				EFC3673C245565A600CE204F /* LaunchScreen.storyboard */,
@@ -95,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFC36742245565A600CE204F /* Build configuration list for PBXNativeTarget "MLBTeamStats" */;
 			buildPhases = (
+				2FA60E9FA45C8874625467A3 /* [CP] Check Pods Manifest.lock */,
 				EFC3672A245565A400CE204F /* Sources */,
 				EFC3672B245565A400CE204F /* Frameworks */,
 				EFC3672C245565A400CE204F /* Resources */,
+				360A5F8DD86D2CB39E2EE0F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,18 +192,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FA60E9FA45C8874625467A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MLBTeamStats-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		360A5F8DD86D2CB39E2EE0F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MLBTeamStats/Pods-MLBTeamStats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MLBTeamStats/Pods-MLBTeamStats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MLBTeamStats/Pods-MLBTeamStats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EFC3672A245565A400CE204F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EF4EFC772455F3BA00A9830E /* RosterData.swift in Sources */,
+				EF26EC2B2456ABED005A4745 /* PlayerStatsViewController.swift in Sources */,
 				EFC3674A24556B9800CE204F /* Teams.swift in Sources */,
 				EFC36736245565A400CE204F /* TeamsViewController.swift in Sources */,
 				EFC36748245568BE00CE204F /* URLConstants.swift in Sources */,
 				EFC36732245565A400CE204F /* AppDelegate.swift in Sources */,
+				EF27CBCF24562B4F0094A53F /* StatisticsViewController.swift in Sources */,
+				EF39153D2456D17C008A810A /* ScoutingReportDetailViewController.swift in Sources */,
 				EF4EFC732455E50300A9830E /* RosterViewController.swift in Sources */,
 				EFC3674C2455743000CE204F /* TeamDetailViewController.swift in Sources */,
+				EF39153B2456BF91008A810A /* ScoutingReportViewController.swift in Sources */,
 				EFC367462455685F00CE204F /* TeamData.swift in Sources */,
 				EF4EFC752455F36000A9830E /* Rosters.swift in Sources */,
 				EFC36734245565A400CE204F /* SceneDelegate.swift in Sources */,
@@ -310,6 +394,7 @@
 		};
 		EFC36743245565A600CE204F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BA4F2D646529E9CE2E0738A /* Pods-MLBTeamStats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -328,6 +413,7 @@
 		};
 		EFC36744245565A600CE204F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 031CA72D310F1FF8095F8B24 /* Pods-MLBTeamStats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
