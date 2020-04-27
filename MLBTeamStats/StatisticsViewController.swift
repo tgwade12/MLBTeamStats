@@ -36,6 +36,7 @@ class StatisticsViewController: UIViewController {
     var profileURL: String!
     var profileURLReceived: String = ""
     var yearsPlayed: Array<String> = []
+    var teamsPlayed: Array<String> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,13 +165,16 @@ class StatisticsViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 
-                let games = json["people"][0]["stats"][0]["splits"].count
-                for i in 0...games-1{
-                    self.yearsPlayed.append(json["people"][0]["stats"][0]["splits"][i]["season"].string ?? "")
-                    print(self.yearsPlayed)
-                    self.updateUserInterface()
+                let games = json["people"][0]["stats"][0]["splits"].count ?? 0
+                if games > 0 {
+                    for i in 0...games-1{
+                        self.yearsPlayed.append(json["people"][0]["stats"][0]["splits"][i]["season"].string ?? "")
+                        self.teamsPlayed.append(json["people"][0]["stats"][0]["splits"][i]["team"]["name"].string ?? "Total")
+                        self.updateUserInterface()
+                    }
+                } else {
+                    self.debutLabel.text = "Rookie"
                 }
-                
                 
             case .failure(let error):
                 print (error)
@@ -188,6 +192,8 @@ class StatisticsViewController: UIViewController {
                 for i in 0...games-1{
                     self.yearsPlayed.append(json["people"][0]["stats"][0]["splits"][i]["season"].string ?? "")
                     print(self.yearsPlayed)
+                    self.teamsPlayed.append(json["people"][0]["stats"][0]["splits"][i]["team"]["name"].string ?? "Total")
+                    
                     self.updateUserInterface()
                 }
                 
@@ -207,6 +213,7 @@ extension StatisticsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = statYearTable.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = "\(yearsPlayed[indexPath.row])"
+        cell.detailTextLabel?.text = "\(teamsPlayed[indexPath.row])"
         return cell
     }
     func updateUserInterface(){

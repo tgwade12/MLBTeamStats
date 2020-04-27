@@ -14,15 +14,22 @@ class ScoutingReportViewController: UIViewController {
     @IBOutlet weak var editBarButton: UIBarButtonItem!
     @IBOutlet weak var addBarButton: UIBarButtonItem!
     
-    var defaultData = UserDefaults.standard
-    var scoutingReports = [""]
-    var scoutingNotesArray = ["This player is very good"]
+    var defaultsData = UserDefaults.standard
+    var scoutingReports = [String]()
+    var scoutingNotesArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scoutingReportTable.delegate = self
         scoutingReportTable.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        scoutingReports = defaultsData.stringArray(forKey: "scoutingReports") ?? [String]()
+        scoutingNotesArray = defaultsData.stringArray(forKey: "scoutingNotesArray") ?? [String]()
+    }
+    
+    func saveDefaultsData(){
+        defaultsData.set(scoutingReports, forKey: "scoutingReports")
+        defaultsData.set(scoutingNotesArray, forKey: "scoutingNotesArray")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -50,8 +57,7 @@ class ScoutingReportViewController: UIViewController {
             scoutingNotesArray.append(sourceViewController.scoutingReportItem!)
             scoutingReportTable.insertRows(at: [newIndexPath], with: .automatic)
         }
-        defaultData.set(scoutingReports, forKey: "scoutingReports")
-        defaultData.set(scoutingNotesArray, forKey: "scoutingNotesArray")
+        saveDefaultsData()
     }
     
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
@@ -84,6 +90,7 @@ extension ScoutingReportViewController: UITableViewDelegate, UITableViewDataSour
             scoutingReports.remove(at: indexPath.row)
             scoutingNotesArray.remove(at: indexPath.row)
             scoutingReportTable.deleteRows(at: [indexPath], with: .fade)
+            saveDefaultsData()
         }
     }
     
@@ -94,6 +101,7 @@ extension ScoutingReportViewController: UITableViewDelegate, UITableViewDataSour
         scoutingNotesArray.remove(at: sourceIndexPath.row)
         scoutingReports.insert(itemToMove, at: destinationIndexPath.row)
         scoutingNotesArray.insert(reportToMove, at: destinationIndexPath.row)
+        saveDefaultsData()
     }
     
 }

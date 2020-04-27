@@ -55,8 +55,19 @@ class PlayerStatsViewController: UIViewController {
                 case .success(let value):
                     let json = JSON(value)
                     
-                    let games = json["people"][0]["stats"][0]["splits"].count
-                    print (games)
+                    let games = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["gamesPlayed"].int
+                    let inningsPitched = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["inningsPitched"].string
+                    let runs = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["runs"].int
+                    let strikeouts = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["strikeOuts"].int
+                    let whip = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["whip"].string
+                    let era = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["era"].string
+
+                    self.gameCountLabel.text = "\(games!)"
+                    self.inningsPitchedHitsCountLabel.text = "\(inningsPitched!)"
+                    self.runsSOCountLabel.text = "\(runs!)"
+                    self.kHRCountLabel.text = "\(strikeouts!)"
+                    self.whipOPSCountLabel.text = whip
+                    self.eraAvgCountLabel.text = era
                     
                     
                 case .failure(let error):
@@ -75,7 +86,6 @@ class PlayerStatsViewController: UIViewController {
                     let json = JSON(value)
                     
                     let games = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["gamesPlayed"].int
-                    print (games)
                     let hits = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["hits"].int
                     let strikeouts = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["strikeOuts"].int
                     let homeRuns = json["people"][0]["stats"][0]["splits"][self.season]["stat"]["homeRuns"].int
