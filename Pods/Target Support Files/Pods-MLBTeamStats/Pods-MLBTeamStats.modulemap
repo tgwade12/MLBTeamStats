@@ -1,0 +1,6 @@
+framework module Pods_MLBTeamStats {
+  umbrella header "Pods-MLBTeamStats-umbrella.h"
+
+  export *
+  module * { export * }
+}
